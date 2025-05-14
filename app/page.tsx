@@ -5,6 +5,7 @@ import { createClient } from "@/utils/supabase/client";
 import { useUserInfo } from "@/hooks/useUserInfo";
 import { Pricing } from "@/components/home/pricing/pricing";
 import Link from "next/link";
+import CodeBlock from "@/components/CodeBlock";
 
 export default function HomePage() {
   const supabase = createClient();
@@ -68,19 +69,17 @@ export default function HomePage() {
                 confidence.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="#features" className="inline-flex items-center text-black justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8 rounded-md text-base">
+                <Link href="#features" className="inline-flex items-center text-black justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-primary hover:bg-primary/90 h-11 px-8 text-base">
                   Explore Features
                 </Link>
-                <Link href="https://github.com/zeeshana07x/superkit" className="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background border border-input hover:bg-accent hover:text-accent-foreground bg-transparent text-white h-11 px-8 rounded-md text-base">
+                <Link href="https://github.com/zeeshana07x/superkit" className="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background border border-input hover:bg-accent hover:text-accent-foreground bg-transparent text-white h-11 px-8 text-base">
                   GitHub
                 </Link>
               </div>
             </div>
 
             {/* GitHub Clone Snippet */}
-            <div className="rounded-lg bg-gray-800 p-4 font-mono text-sm text-gray-100 shadow-lg">
-              <pre className="whitespace-pre-wrap">{gitSnippet}</pre>
-            </div>
+            <CodeBlock>{gitSnippet}</CodeBlock>
           </div>
         </div>
       </section>
@@ -135,7 +134,7 @@ export default function HomePage() {
             </p>
             <Link 
               href="https://github.com/zeeshana07x/superkit"
-              className="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background px-8 bg-primary-300 text-background hover:bg-primary-400 h-11 rounded-md text-base"
+              className="inline-flex items-center justify-center font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background px-8 bg-primary-300 text-background hover:bg-primary-400 h-11 rounded-md text-base"
             >
               Get Started
             </Link>

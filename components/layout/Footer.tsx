@@ -1,5 +1,3 @@
-// components/layout/Footer.tsx
-'use client';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -15,14 +13,6 @@ export default function Footer() {
       ],
     },
     {
-      title: 'Resources',
-      links: [
-        { label: 'Documentation', href: '/docs' },
-        { label: 'Tutorials', href: '/tutorials' },
-        { label: 'Blog', href: '/blog' },
-      ],
-    },
-    {
       title: 'Company',
       links: [
         { label: 'About', href: '/about' },
@@ -31,15 +21,18 @@ export default function Footer() {
       ],
     },
   ];
-  
+
   return (
     <footer className="border-t border-secondary-700 bg-background text-foreground">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="py-12">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             {/* Brand & Description */}
             <div className="col-span-1 lg:col-span-2">
-              <Link href="/" className="mb-6 inline-block">
+              <Link 
+                href="/" 
+                className="mb-6 inline-block relative transition-transform duration-300 hover:scale-105 after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-current hover:after:w-full after:transition-all after:duration-300"
+              >
                 <span className="text-2xl font-bold text-primary-300">
                   SuperKit
                 </span>
@@ -55,8 +48,8 @@ export default function Footer() {
             </div>
             
             {/* Link Groups */}
-            <div className="col-span-1 lg:col-span-3">
-              <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
+            <div className="col-span-1 lg:col-span-2">
+              <div className="grid grid-cols-2 gap-8">
                 {footerLinks.map((category) => (
                   <div key={category.title} className="mt-2">
                     <h3 className="text-sm font-semibold uppercase tracking-wider text-secondary-300">
@@ -67,7 +60,7 @@ export default function Footer() {
                         <li key={link.label}>
                           <Link
                             href={link.href}
-                            className="text-sm text-secondary-400 transition-colors hover:text-primary-300"
+                            className="text-sm text-secondary-400 relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-current hover:text-primary-300 hover:after:w-full after:transition-all after:duration-300"
                           >
                             {link.label}
                           </Link>

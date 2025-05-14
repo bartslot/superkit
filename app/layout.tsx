@@ -1,15 +1,14 @@
-// app/layout.tsx
-
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Work_Sans } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import SupabaseProvider from '@/components/SupabaseProvider';
 
-const inter = Inter({
+const work_sans = Work_Sans({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-inter',
+  variable: '--font-work-sans',
 });
 
 export const metadata: Metadata = {
@@ -24,11 +23,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={work_sans.variable}>
       <body className="flex min-h-screen flex-col">
+        {/* SupabaseProvider is client-only, so layout stays a server component */}
+        <SupabaseProvider>
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
+        </SupabaseProvider>
       </body>
     </html>
   );
