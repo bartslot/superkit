@@ -1,11 +1,9 @@
 // components/layout/Navbar.tsx
 'use client';
-
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
-import Button from '@/components/ui/button';
 
 const navItems = [
   { label: 'Home', href: '/' },
@@ -17,7 +15,6 @@ const navItems = [
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
   return (
@@ -31,7 +28,7 @@ export default function Navbar() {
               className={cn(
                 'text-sm font-medium transition-colors hover:text-primary-300',
                 pathname === item.href ||
-                (item.href !== '/' && pathname?.startsWith(item.href))
+                  (item.href !== '/' && pathname?.startsWith(item.href))
                   ? 'text-primary-300'
                   : 'text-secondary-400'
               )}
@@ -40,11 +37,13 @@ export default function Navbar() {
             </Link>
           </li>
         ))}
-
         <li>
-          <Button asChild variant="outline" size="default" className="border-secondary-600 text-secondary-400 hover:bg-secondary-800">
-            <Link href="/login">Login</Link>
-          </Button>
+          <Link 
+            href="/login"
+            className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none border border-secondary-600 text-secondary-400 hover:bg-secondary-800 h-10 py-2 px-4"
+          >
+            Login
+          </Link>
         </li>
       </ul>
 
@@ -79,7 +78,7 @@ export default function Navbar() {
                   className={cn(
                     'block py-2 text-base font-medium transition-colors hover:text-primary-300',
                     pathname === item.href ||
-                    (item.href !== '/' && pathname?.startsWith(item.href))
+                      (item.href !== '/' && pathname?.startsWith(item.href))
                       ? 'text-primary-300'
                       : 'text-secondary-400'
                   )}
@@ -89,14 +88,20 @@ export default function Navbar() {
               </li>
             ))}
             <li>
-              <Button asChild variant="default" className="w-full bg-background text-foreground hover:bg-secondary-800">
-                <Link href="https://github.com/zeeshana07x/superkit">GitHub</Link>
-              </Button>
+              <Link 
+                href="https://github.com/zeeshana07x/superkit"
+                className="inline-flex w-full items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none bg-background text-foreground hover:bg-secondary-800 h-10 py-2 px-4"
+              >
+                GitHub
+              </Link>
             </li>
             <li>
-              <Button asChild variant="outline" className="w-full border-secondary-600 text-secondary-400 hover:bg-secondary-800">
-                <Link href="/login">Login</Link>
-              </Button>
+              <Link 
+                href="/login"
+                className="inline-flex w-full items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none border border-secondary-600 text-secondary-400 hover:bg-secondary-800 h-10 py-2 px-4"
+              >
+                Login
+              </Link>
             </li>
           </ul>
         </div>

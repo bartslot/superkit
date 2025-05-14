@@ -1,38 +1,98 @@
 'use client';
 
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
-import { useState } from 'react';
-import { AuthenticationForm } from '@/components/authentication/authentication-form';
+import { useState, useEffect } from 'react';
 import { signup } from '@/app/signup/actions';
-import { useToast } from '@/components/ui/use-toast';
+import { AuthenticationForm } from '@/components/authentication/authentication-form';
 
 export function SignupForm() {
-  const { toast } = useToast();
+  // form state
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  function handleSignup() {
-    signup({ email, password }).then((data) => {
-      if (data?.error) {
-        toast({ description: 'Something went wrong. Please try again', variant: 'destructive' });
-      }
-    });
+  // toast state
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
+  const [toastVariant, setToastVariant] = useState<'default' | 'destructive'>('default');
+
+  // auto‑dismiss toast after 3 seconds
+  useEffect(() => {
+    if (toastMessage) {
+      const timer = setTimeout(() => setToastMessage(null), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [toastMessage]);
+
+  // handlers
+  async function handleSignup() {
+    const res = await signup({ email, password });
+    if (res?.error) {
+      setToastVariant('destructive');
+      setToastMessage('Something went wrong. Please try again');
+    }
   }
 
   return (
-    <form action={'#'} className={'px-6 md:px-16 pb-6 py-8 gap-6 flex flex-col items-center justify-center'}>
-      <Image src={'/assets/icons/logo/aeroedit-icon.svg'} alt={'AeroEdit'} width={80} height={80} />
-      <div className={'text-[30px] leading-[36px] font-medium tracking-[-0.6px] text-center'}>Create an account</div>
+    <form
+      onSubmit={e => {
+        e.preventDefault();
+        handleSignup();
+      }}
+      className="
+        relative
+        px-6 md:px-16
+        pb-6 py-8
+        gap-6
+        flex flex-col items-center justify-center
+      "
+    >
+      {/* Toast */}
+      {toastMessage && (
+        <div
+          className={`
+            absolute top-4 left-1/2 transform -translate-x-1/2
+            px-4 py-2 rounded-md shadow-md
+            ${toastVariant === 'destructive' ? 'bg-red-600 text-white' : 'bg-gray-800 text-white'}
+          `}
+        >
+          {toastMessage}
+        </div>
+      )}
+
+      {/* Logo */}
+      <Image
+        src="/assets/icons/logo/aeroedit-icon.svg"
+        alt="AeroEdit"
+        width={80}
+        height={80}
+      />
+
+      {/* Heading */}
+      <div className="text-[30px] leading-[36px] font-medium tracking-[-0.6px] text-center">
+        Create an account
+      </div>
+
+      {/* Email & Password Fields */}
       <AuthenticationForm
         email={email}
-        onEmailChange={(email) => setEmail(email)}
+        onEmailChange={setEmail}
         password={password}
-        onPasswordChange={(password) => setPassword(password)}
+        onPasswordChange={setPassword}
       />
-      <Button formAction={() => handleSignup()} type={'submit'} variant={'secondary'} className={'w-full'}>
+
+      {/* Sign Up Button */}
+      <button
+        type="submit"
+        className="
+          w-full
+          px-4 py-2
+          border border-border
+          rounded-md
+          bg-background/80 backdrop-blur
+          hover:opacity-90 transition
+        "
+      >
         Sign up
-      </Button>
+      </button>
     </form>
   );
 }

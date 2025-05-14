@@ -4,13 +4,7 @@ import { useState } from "react";
 import { createClient } from "@/utils/supabase/client";
 import { useUserInfo } from "@/hooks/useUserInfo";
 import { Pricing } from "@/components/home/pricing/pricing";
-
-import Image from "next/image";
 import Link from "next/link";
-import Button from "@/components/ui/button";
-import Card from "@/components/ui/card";
-import Container from "@/components/ui/container";
-import CodeBlock from "@/components/CodeBlock";
 
 export default function HomePage() {
   const supabase = createClient();
@@ -59,7 +53,7 @@ export default function HomePage() {
     <>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-b from-primary-700 to-primary-300 py-20 text-white">
-        <Container>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 md:grid-cols-2 md:items-center">
             <div className="space-y-6">
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
@@ -74,28 +68,29 @@ export default function HomePage() {
                 confidence.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button asChild size="lg">
-                  <Link href="#features">Explore Features</Link>
-                </Button>
-                <Button variant="outline" size="lg">
-                  <Link href="https://github.com/zeeshana07x/superkit">
-                    GitHub
-                  </Link>
-                </Button>
+                <Link href="#features" className="inline-flex items-center text-black justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8 rounded-md text-base">
+                  Explore Features
+                </Link>
+                <Link href="https://github.com/zeeshana07x/superkit" className="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background border border-input hover:bg-accent hover:text-accent-foreground bg-transparent text-white h-11 px-8 rounded-md text-base">
+                  GitHub
+                </Link>
               </div>
             </div>
 
             {/* GitHub Clone Snippet */}
-            <CodeBlock>{gitSnippet}</CodeBlock>
+            <div className="rounded-lg bg-gray-800 p-4 font-mono text-sm text-gray-100 shadow-lg">
+              <pre className="whitespace-pre-wrap">{gitSnippet}</pre>
+            </div>
           </div>
-        </Container>
+        </div>
       </section>
+      
       {/* Features Section */}
       <section
         id="features"
         className="section py-16 bg-background text-foreground"
       >
-        <Container>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold sm:text-4xl">Features</h2>
             <p className="mx-auto max-w-2xl text-lg text-secondary-400">
@@ -104,9 +99,9 @@ export default function HomePage() {
           </div>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {features.map((feature, idx) => (
-              <Card
+              <div
                 key={idx}
-                className="flex flex-col items-start p-6 bg-background border border-secondary-700"
+                className="flex flex-col items-start p-6 bg-background border border-secondary-700 rounded-lg shadow-sm"
               >
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary-300 text-2xl text-background">
                   {feature.icon}
@@ -115,20 +110,22 @@ export default function HomePage() {
                   {feature.title}
                 </h3>
                 <p className="text-secondary-500">{feature.description}</p>
-              </Card>
+              </div>
             ))}
           </div>
-        </Container>
+        </div>
       </section>
+      
       {/* Pricing Section */}
       <section className="section bg-background text-foreground py-16">
-        <Container>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Pricing country={country} />
-        </Container>
+        </div>
       </section>
+      
       {/* CTA Section */}
       <section className="bg-secondary-700 py-16 text-foreground">
-        <Container>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-6 text-3xl font-bold sm:text-4xl">
               Ready to start building?
@@ -136,16 +133,14 @@ export default function HomePage() {
             <p className="mb-8 text-lg text-secondary-300">
               Get started with SuperKit today and build your next great project.
             </p>
-            <Button
-              size="lg"
-              className="px-8 bg-primary-300 text-background hover:bg-primary-400"
+            <Link 
+              href="https://github.com/zeeshana07x/superkit"
+              className="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background px-8 bg-primary-300 text-background hover:bg-primary-400 h-11 rounded-md text-base"
             >
-              <Link href="https://github.com/zeeshana07x/superkit">
-                Get Started
-              </Link>
-            </Button>
+              Get Started
+            </Link>
           </div>
-        </Container>
+        </div>
       </section>
     </>
   );

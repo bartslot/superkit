@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import Container from '@/components/ui/container';
 import Navbar from './Navbar';
 
 export default function Header() {
@@ -13,7 +12,6 @@ export default function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -25,7 +23,7 @@ export default function Header() {
         isScrolled ? 'bg-background shadow-md' : 'bg-transparent',
       )}
     >
-      <Container>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
@@ -34,7 +32,7 @@ export default function Header() {
           </div>
           <Navbar />
         </div>
-      </Container>
+      </div>
     </header>
   );
 }

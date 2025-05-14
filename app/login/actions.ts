@@ -8,6 +8,10 @@ interface FormData {
   email: string;
   password: string;
 }
+
+/**
+ * Traditional email/password login
+ */
 export async function login(data: FormData) {
   const supabase = await createClient();
   const { error } = await supabase.auth.signInWithPassword(data);
@@ -20,27 +24,56 @@ export async function login(data: FormData) {
   redirect('/');
 }
 
+/**
+ * OAuth login via GitHub
+ */
 export async function signInWithGithub() {
   const supabase = await createClient();
   const { data } = await supabase.auth.signInWithOAuth({
     provider: 'github',
     options: {
-      redirectTo: `https://paddle-billing.vercel.app/auth/callback`,
+      redirectTo: `${process.env.NEXT_PUBLIC_APP_URL}/auth/callback`,
     },
   });
+
   if (data.url) {
     redirect(data.url);
   }
 }
 
+/**
+ * OAuth login via Google
+ */
+export async function signInWithGoogle() {
+  const supabase = await createClient();
+  const { data } = await supabase.auth.signInWithOAuth({
+    provider: 'google',
+    options: {
+      redirectTo: `${process.env.NEXT_PUBLIC_APP_URL}/auth/callback`,
+    },
+  });
+
+  if (data.url) {
+    redirect(data.url);
+  }
+}
+
+/**
+ * Anonymous guest login, with transient email update
+ */
 export async function loginAnonymously() {
   const supabase = await createClient();
   const { error: signInError } = await supabase.auth.signInAnonymously();
+  if (signInError) {
+    return { error: true };
+  }
+
+  const randomEmail = `superkit+${Date.now().toString(36)}@paddle.com`;
   const { error: updateUserError } = await supabase.auth.updateUser({
-    email: `aeroedit+${Date.now().toString(36)}@paddle.com`,
+    email: randomEmail,
   });
 
-  if (signInError || updateUserError) {
+  if (updateUserError) {
     return { error: true };
   }
 
