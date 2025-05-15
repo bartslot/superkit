@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createClient } from "@/utils/supabase/client";
 import { useUserInfo } from "@/hooks/useUserInfo";
-import { Pricing } from "@/components/home/pricing/pricing";
+import { Pricing } from "@/components/pricing/pricing";
 import Link from "next/link";
 import CodeBlock from "@/components/CodeBlock";
 
@@ -11,6 +11,36 @@ export default function HomePage() {
   const supabase = createClient();
   const { user } = useUserInfo(supabase);
   const [country, setCountry] = useState("US");
+  
+  // Add smooth scrolling functionality without using external libraries
+  useEffect(() => {
+    // Handle all anchor links with href starting with #
+    const handleSmoothScroll = (e: { preventDefault?: any; target?: any; }) => {
+      const { target } = e;
+      // Check if the clicked element is an anchor tag with href starting with #
+      if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
+        const targetId = target.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+          e.preventDefault();
+          // Use native smooth scrolling
+          targetElement.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+    };
+
+    // Add event listener to document
+    document.addEventListener('click', handleSmoothScroll);
+    
+    // Clean up event listener on component unmount
+    return () => {
+      document.removeEventListener('click', handleSmoothScroll);
+    };
+  }, []);
 
   const features = [
     {
@@ -79,7 +109,9 @@ export default function HomePage() {
             </div>
 
             {/* GitHub Clone Snippet */}
-            <CodeBlock>{gitSnippet}</CodeBlock>
+            <div className="relative transform transition-transform duration-300 hover:scale-105">
+              <CodeBlock>{gitSnippet}</CodeBlock>
+            </div>
           </div>
         </div>
       </section>
@@ -87,7 +119,7 @@ export default function HomePage() {
       {/* Features Section */}
       <section
         id="features"
-        className="section py-16 bg-background text-foreground"
+        className="section py-16 bg-background text-foreground scroll-mt-16"
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
@@ -100,7 +132,7 @@ export default function HomePage() {
             {features.map((feature, idx) => (
               <div
                 key={idx}
-                className="flex flex-col items-start p-6 bg-background border border-secondary-700 rounded-lg shadow-sm"
+                className="flex flex-col items-start p-6 bg-background border border-secondary-700 rounded-lg shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
               >
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary-300 text-2xl text-background">
                   {feature.icon}
@@ -116,7 +148,7 @@ export default function HomePage() {
       </section>
       
       {/* Pricing Section */}
-      <section className="section bg-background text-foreground py-16">
+      <section id="pricing" className="section bg-background text-foreground py-16 scroll-mt-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Pricing country={country} />
         </div>
@@ -134,7 +166,7 @@ export default function HomePage() {
             </p>
             <Link 
               href="https://github.com/zeeshana07x/superkit"
-              className="inline-flex items-center justify-center font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background px-8 bg-primary-300 text-background hover:bg-primary-400 h-11 rounded-md text-base"
+              className="inline-flex items-center justify-center font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background px-8 bg-primary-300 text-background hover:bg-primary-400 h-11 rounded-md text-base transform transition-transform duration-300 hover:scale-105"
             >
               Get Started
             </Link>

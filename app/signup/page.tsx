@@ -1,51 +1,37 @@
-'use client';
+// app/signup/page.tsx
+import { redirect } from 'next/navigation';
+import { getSession } from '@/utils/supabase/server';
+import { SignupForm } from '@/components/authentication/SignupForm';
+import { GgLoginButton } from '@/components/authentication/GgLoginButton';
 
-import { SignupForm } from '@/components/authentication/sign-up-form';
-import { GgLoginButton } from '@/components/authentication/gg-login-button';
+export default async function SignupPage() {
+  // Server‑side redirect if already signed in
+  const session = await getSession();
+  if (session) {
+    redirect('/');
+  }
 
-export default function SignupPage() {
+  // No session? Show signup UI
   return (
-    <div className="flex flex-col">
-      {/* Main card with the email/password form */}
-      <div
-        className="
-          mx-auto
-          mt-[112px]
-          bg-background/80
-          w-[343px] md:w-[488px]
-          gap-5
-          flex-col
-          rounded-lg rounded-b-none
-          login-card-border
-          backdrop-blur-[6px]
-        "
-      >
+    <div className="flex flex-col h-screen items-center justify-start py-8 px-4">
+      {/* Top card: email/password */}
+      <div className="bg-background/80 w-full max-w-md rounded-t-lg login-card-border backdrop-blur-[6px] overflow-hidden">
         <SignupForm />
       </div>
 
-      {/* Google OAuth button */}
-      <GgLoginButton label="Sign up with Google" />
+      {/* Google OAuth */}
+      <div className="my-4 w-full max-w-md">
+        <GgLoginButton label="Sign up with Google" />
+      </div>
 
-      {/* Bottom footer */}
-      <div
-        className="
-          mx-auto
-          w-[343px] md:w-[488px]
-          bg-background/80
-          backdrop-blur-[6px]
-          px-6 md:px-16
-          pt-0 py-8
-          gap-6
-          flex flex-col items-center justify-center
-          rounded-b-lg
-        "
-      >
-        <div className="text-center text-muted-foreground text-sm mt-4 font-medium">
+      {/* Bottom card: login link */}
+      <div className="bg-background/80 w-full max-w-md rounded-b-lg login-card-border backdrop-blur-[6px] py-4 flex items-center justify-center">
+        <p className="text-sm text-muted-foreground">
           Already have an account?{' '}
-          <a href="/login" className="text-white">
+          <a href="/login" className="text-white hover:underline">
             Log in
           </a>
-        </div>
+        </p>
       </div>
     </div>
   );

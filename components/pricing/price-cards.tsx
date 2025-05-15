@@ -1,10 +1,10 @@
 import { PricingTier } from '@/constants/pricing-tier';
 import { IBillingFrequency } from '@/constants/billing-frequency';
-import { FeaturesList } from '@/components/home/pricing/features-list';
-import { PriceAmount } from '@/components/home/pricing/price-amount';
+import { FeaturesList } from '@/components/pricing/features-list';
+import { PriceAmount } from '@/components/pricing/price-amount';
 import { cn } from '@/lib/utils';
 import Button from '@/components/ui/button';
-import { PriceTitle } from '@/components/home/pricing/price-title';
+import { PriceTitle } from '@/components/pricing/price-title';
 import { Separator } from '@/components/ui/separator';
 import Link from 'next/link';
 

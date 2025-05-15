@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 import { Work_Sans } from 'next/font/google';
 import './globals.css';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
+import HeaderFooterWrapper from '@/components/HeaderFooterWrapper';
 import SupabaseProvider from '@/components/SupabaseProvider';
 
 const work_sans = Work_Sans({
@@ -27,9 +26,9 @@ export default function RootLayout({
       <body className="flex min-h-screen flex-col">
         {/* SupabaseProvider is client-only, so layout stays a server component */}
         <SupabaseProvider>
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
+        <HeaderFooterWrapper>
+          {children}
+        </HeaderFooterWrapper>
         </SupabaseProvider>
       </body>
     </html>

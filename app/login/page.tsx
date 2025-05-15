@@ -1,32 +1,36 @@
-import { LoginForm } from '@/components/authentication/login-form';
-import { GgLoginButton } from '@/components/authentication/gg-login-button';
+// app/login/page.tsx
+import { redirect } from 'next/navigation';
+import { getSession } from '@/utils/supabase/server';
+import { LoginForm } from '@/components/authentication/LoginForm';
+import { GgLoginButton } from '@/components/authentication/GgLoginButton';
 
-export default function LoginPage() {
+export default async function LoginPage() {
+  // Server‑side: if there's already a session, send them home immediately
+  const session = await getSession();
+  if (session) {
+    redirect('/');
+  }
+
+  // No session? Render the login UI
   return (
-    <div>
-      <div className="flex flex-col">
-        <div
-          className={
-            'mx-auto mt-[112px] bg-background/80 w-[343px] md:w-[488px] gap-5 flex-col rounded-lg rounded-b-none login-card-border backdrop-blur-[6px]'
-          }
-        >
-          <LoginForm />
+    <div className="min-h-screen flex items-center justify-center py-8 px-4">
+      <div className="flex flex-col w-full max-w-md space-y-2">
+        {/* Top card: email/password */}
+        <div className="bg-background/80 rounded-t-lg login-card-border backdrop-blur-[6px] overflow-hidden">
+          <LoginForm hideSignUpLink />
         </div>
 
-        {/* Google OAuth button */}
+        {/* Google OAuth */}
         <GgLoginButton label="Log in with Google" />
 
-        <div
-          className={
-            'mx-auto w-[343px] md:w-[488px] bg-background/80 backdrop-blur-[6px] px-6 md:px-16 pt-0 py-8 gap-6 flex flex-col items-center justify-center rounded-b-lg'
-          }
-        >
-          <div className="text-center text-muted-foreground text-sm mt-4 font-medium">
+        {/* Bottom card: signup link */}
+        <div className="bg-background/80 backdrop-blur-[6px] rounded-b-lg flex items-center justify-center py-4">
+          <p className="text-sm text-muted-foreground">
             Don’t have an account?{' '}
-            <a href="/signup" className="text-white">
+            <a href="/signup" className="text-white hover:underline">
               Sign up
             </a>
-          </div>
+          </p>
         </div>
       </div>
     </div>
