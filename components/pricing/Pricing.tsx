@@ -1,5 +1,5 @@
-import { Toggle } from '@/components/shared/toggle/toggle';
-import { PriceCards } from '@/components/pricing/price-cards';
+import { Toggle } from '@/components/shared/toggle/Toggle';
+import { PriceCards } from '@/components/pricing/PriceCards';
 import { useEffect, useState } from 'react';
 import { BillingFrequency, IBillingFrequency } from '@/constants/billing-frequency';
 import { Environments, initializePaddle, Paddle } from '@paddle/paddle-js';

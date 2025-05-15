@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { createClient } from "@/utils/supabase/client";
 import { useUserInfo } from "@/hooks/useUserInfo";
-import { Pricing } from "@/components/pricing/pricing";
+import { Pricing } from "@/components/pricing/Pricing";
 import Link from "next/link";
 import CodeBlock from "@/components/CodeBlock";
 

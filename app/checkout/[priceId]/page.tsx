@@ -1,5 +1,5 @@
-import { CheckoutHeader } from '@/components/checkout/checkout-header';
-import { CheckoutContents } from '@/components/checkout/checkout-contents';
+import { CheckoutHeader } from '@/components/checkout/CheckoutHeader';
+import { CheckoutContents } from '@/components/checkout/CheckoutContents';
 import { createClient } from '@/utils/supabase/server';
 
 export default async function CheckoutPage() {

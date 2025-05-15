@@ -1,6 +1,6 @@
 'use client';
 
-import { PriceSection } from '@/components/checkout/price-section';
+import { PriceSection } from '@/components/checkout/PriceSection';
 import { type Environments, initializePaddle, type Paddle } from '@paddle/paddle-js';
 import type { CheckoutEventsData } from '@paddle/paddle-js/types/checkout/events';
 import throttle from 'lodash.throttle';

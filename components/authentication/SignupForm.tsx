@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { signup } from "@/app/signup/actions";
 import { AuthenticationForm } from "@/components/authentication/AuthenticationForm";
-import Link from "next/link";
 
 export function SignupForm() {
   // form state
