@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { createClient } from "@/utils/supabase/client";
 import { useUserInfo } from "@/hooks/useUserInfo";
 import { Pricing } from "@/components/pricing/pricing";
@@ -9,36 +9,32 @@ import CodeBlock from "@/components/CodeBlock";
 
 export default function HomePage() {
   const supabase = createClient();
-  const { user } = useUserInfo(supabase);
-  const [country, setCountry] = useState("US");
-  
-  // Add smooth scrolling functionality without using external libraries
+  useUserInfo(supabase); // Removed destructuring to avoid unused `user`
+  const [country] = useState("US"); // Removed `setCountry` since unused
+
   useEffect(() => {
-    // Handle all anchor links with href starting with #
-    const handleSmoothScroll = (e: { preventDefault?: any; target?: any; }) => {
-      const { target } = e;
-      // Check if the clicked element is an anchor tag with href starting with #
-      if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
-        const targetId = target.getAttribute('href').substring(1);
+    const handleSmoothScroll = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (
+        target.tagName === "A" &&
+        target instanceof HTMLAnchorElement &&
+        target.getAttribute("href")?.startsWith("#")
+      ) {
+        const targetId = target.getAttribute("href")!.substring(1);
         const targetElement = document.getElementById(targetId);
-        
         if (targetElement) {
           e.preventDefault();
-          // Use native smooth scrolling
-          targetElement.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
+          targetElement.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
           });
         }
       }
     };
 
-    // Add event listener to document
-    document.addEventListener('click', handleSmoothScroll);
-    
-    // Clean up event listener on component unmount
+    document.addEventListener("click", handleSmoothScroll);
     return () => {
-      document.removeEventListener('click', handleSmoothScroll);
+      document.removeEventListener("click", handleSmoothScroll);
     };
   }, []);
 
@@ -99,10 +95,16 @@ export default function HomePage() {
                 confidence.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="#features" className="inline-flex items-center text-black justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-primary hover:bg-primary/90 h-11 px-8 text-base">
+                <Link
+                  href="#features"
+                  className="inline-flex items-center text-black justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-primary hover:bg-primary/90 h-11 px-8 text-base"
+                >
                   Explore Features
                 </Link>
-                <Link href="https://github.com/zeeshana07x/superkit" className="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background border border-input hover:bg-accent hover:text-accent-foreground bg-transparent text-white h-11 px-8 text-base">
+                <Link
+                  href="https://github.com/zeeshana07x/superkit"
+                  className="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background border border-input hover:bg-accent hover:text-accent-foreground bg-transparent text-white h-11 px-8 text-base"
+                >
                   GitHub
                 </Link>
               </div>
@@ -115,7 +117,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      
+
       {/* Features Section */}
       <section
         id="features"
@@ -146,14 +148,17 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      
+
       {/* Pricing Section */}
-      <section id="pricing" className="section bg-background text-foreground py-16 scroll-mt-16">
+      <section
+        id="pricing"
+        className="section bg-background text-foreground py-16 scroll-mt-16"
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Pricing country={country} />
         </div>
       </section>
-      
+
       {/* CTA Section */}
       <section className="bg-secondary-700 py-16 text-foreground">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -164,7 +169,7 @@ export default function HomePage() {
             <p className="mb-8 text-lg text-secondary-300">
               Get started with SuperKit today and build your next great project.
             </p>
-            <Link 
+            <Link
               href="https://github.com/zeeshana07x/superkit"
               className="inline-flex items-center justify-center font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background px-8 bg-primary-300 text-background hover:bg-primary-400 h-11 rounded-md text-base transform transition-transform duration-300 hover:scale-105"
             >
