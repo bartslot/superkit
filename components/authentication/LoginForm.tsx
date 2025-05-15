@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { login, loginAnonymously } from "@/app/login/actions";
 import { useState, useEffect } from "react";
 import { AuthenticationForm } from "@/components/authentication/AuthenticationForm";
-import Link from "next/link";
 
 interface LoginFormProps {
   hideSignUpLink?: boolean;
@@ -14,11 +14,11 @@ export function LoginForm({ hideSignUpLink = false }: LoginFormProps) {
   // form state
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
+
   // toast state
   const [toastMessage, setToastMessage] = useState<string | null>(null);
   const [toastVariant, setToastVariant] = useState<"default" | "destructive">("default");
-  
+
   // auto-dismiss toast after 3s
   useEffect(() => {
     if (toastMessage) {
@@ -26,7 +26,7 @@ export function LoginForm({ hideSignUpLink = false }: LoginFormProps) {
       return () => clearTimeout(id);
     }
   }, [toastMessage]);
-  
+
   // handlers
   async function handleLogin() {
     const res = await login({ email, password });
@@ -35,7 +35,7 @@ export function LoginForm({ hideSignUpLink = false }: LoginFormProps) {
       setToastMessage("Invalid email or password");
     }
   }
-  
+
   async function handleAnonymousLogin() {
     const res = await loginAnonymously();
     if (res?.error) {
@@ -43,14 +43,15 @@ export function LoginForm({ hideSignUpLink = false }: LoginFormProps) {
       setToastMessage("Something went wrong. Please try again");
     }
   }
-  
+
   return (
     <div className="w-full">
       <div className="w-full rounded-lg overflow-hidden flex flex-col">
+        {/* Header */}
         <div className="bg-gradient-to-r from-primary/10 to-primary/5 p-4 pb-10 relative shrink-0">
           <div className="absolute w-full left-0 bottom-0">
             <svg viewBox="0 0 1440 120" className="text-background" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0,0 C240,60 480,100 720,100 C960,100 1200,60 1440,0 L1440,120 L0,120 Z"></path>
+              <path d="M0,0 C240,60 480,100 720,100 C960,100 1200,60 1440,0 L1440,120 L0,120 Z" />
             </svg>
           </div>
           <div className="flex flex-col items-center relative z-10">
@@ -70,6 +71,7 @@ export function LoginForm({ hideSignUpLink = false }: LoginFormProps) {
           </div>
         </div>
 
+        {/* Form */}
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -96,11 +98,11 @@ export function LoginForm({ hideSignUpLink = false }: LoginFormProps) {
             </div>
           )}
 
-          {/* Guest Login Button */}
+          {/* Guest Login */}
           <button
             type="button"
             onClick={handleAnonymousLogin}
-            className="w-full flex items-center justify-center px-4 py-2 bg-background border border-border rounded-md hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-primary/30 mb-4"
+            className="w-full mb-4 flex items-center justify-center px-4 py-2 bg-background border border-border rounded-md hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-primary/30"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -118,7 +120,7 @@ export function LoginForm({ hideSignUpLink = false }: LoginFormProps) {
             </div>
           </div>
 
-          {/* Email & Password Form */}
+          {/* Email & Password */}
           <AuthenticationForm
             email={email}
             onEmailChange={setEmail}
@@ -129,11 +131,20 @@ export function LoginForm({ hideSignUpLink = false }: LoginFormProps) {
           {/* Submit */}
           <button
             type="submit"
-            className="w-full px-4 py-2 mt-10 bg-primary text-black rounded-md hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50 font-medium"
+            className="w-full mt-10 px-4 py-2 bg-primary text-black rounded-md hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50 font-medium"
           >
             Log in
           </button>
 
+          {/* Conditional Sign‑Up Link */}
+          {!hideSignUpLink && (
+            <p className="mt-4 text-center text-sm text-muted-foreground">
+              Don’t have an account?{" "}
+              <Link href="/signup" className="font-medium text-primary hover:underline">
+                Sign up
+              </Link>
+            </p>
+          )}
         </form>
       </div>
     </div>
