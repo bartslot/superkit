@@ -13,7 +13,7 @@ export function CheckoutHeader() {
           <ChevronLeft className="h-4 w-4 text-white" />
         </button>
       </Link>
-      <Image src="/logo.svg" alt="AeroEdit" width={131} height={28} />
+      <h1 className="text-bold text-2xl">⚡uperKit</h1>
     </div>
 );
 }

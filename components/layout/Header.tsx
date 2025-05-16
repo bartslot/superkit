@@ -27,7 +27,7 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
-              <span className="text-2xl font-bold text-primary-300">SuperKit</span>
+              <span className="text-2xl font-bold text-primary-300">⚡uperKit</span>
             </Link>
           </div>
           <Navbar />

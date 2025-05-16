@@ -17,7 +17,7 @@ export function Toggle({ frequency, setFrequency }: Props) {
             className={`
               px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-primary
               ${isSelected
-                ? "bg-primary text-white"
+                ? "bg-primary text-black"
                 : "bg-gray-100 text-gray-700 hover:bg-gray-200"}
             `}
           >
