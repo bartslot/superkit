@@ -1,8 +1,8 @@
-## SuperKit
+## ⚡uperKit
 
 A fully configured Next.js starter kit featuring:
 
-- **Next.js 14** with App Router (TypeScript-ready)  
+- **Next.js 15+** with App Router (TypeScript-ready)  
 - **Tailwind CSS** for utility-first styling  
 - **Supabase** integration for authentication & database  
 - **Paddle** checkout for seamless paid subscriptions  
@@ -58,7 +58,7 @@ Get up and running in minutes—no boilerplate headaches.
 
 1. **Clone the repo**  
    ```bash
-   git clone https://github.com/your-username/superkit.git
+   git clone https://github.com/zeeshana07x/superkit.git
    cd superkit
 
 2. **Install dependencies**
