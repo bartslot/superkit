@@ -94,3 +94,58 @@ Get up and running in minutes—no boilerplate headaches.
    PADDLE_API_KEY=
    PADDLE_NOTIFICATION_WEBHOOK_SECRET=
    NEXT_PUBLIC_PADDLE_CLIENT_TOKEN=
+
+---
+
+## Contributing
+
+We ❤️ contributions! Whether it’s reporting bugs, suggesting new features, improving documentation, or submitting code, your input is welcome.
+
+### How to Contribute
+
+1. **Fork the repository**  
+   Click the “Fork” button at the top-right of the SuperKit repo page to create your own copy.
+
+2. **Clone your fork locally**  
+   ```bash
+   git clone https://github.com/zeeshana07x/superkit.git
+   cd superkit
+
+3. **Create a new branch**  
+   ```bash
+   git checkout -b feat/your-feature-name
+ - Use a descriptive branch name, e.g. fix/navbar-scroll or feat/paddle-webhook. 
+
+4. **Make your changes**  
+
+ - Follow the existing code style.
+ - Add or update code as needed.
+ - Update documentation in README.md.
+
+5. **Commit your work**  
+   ```bash
+   git add .
+   git commit -m "feat: describe your feature or fix"
+
+6. **Push your branch to GitHub**
+   ```bash
+   git push origin feat/your-feature-name
+
+7. **Open a Pull Request**
+
+ - Navigate to your fork on GitHub.
+ - Click “Compare & pull request."
+ - Fill out the PR template, explaining what you changed and why.
+
+### Reporting Issues
+ - Please search existing issues before opening a new one.
+ - Use a clear, descriptive title and include steps to reproduce bugs or screenshots if applicable. 
+
+### Code of Conduct
+
+This project follows the [Contributor Covenant Code of Conduct](https://www.contributor‑covenant.org/) to ensure a welcoming and respectful community for all contributors. Please read the full text of the code on the Contributor Covenant website before participating.
+
+---
+
+---
+Made with ❤️ & vibe by **Zeeshan**
