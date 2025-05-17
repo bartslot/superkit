@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { login, loginAnonymously } from "@/app/login/actions";
 import { useState, useEffect } from "react";
@@ -55,13 +54,7 @@ export function LoginForm({ hideSignUpLink = false }: LoginFormProps) {
             </svg>
           </div>
           <div className="flex flex-col items-center relative z-10">
-            <Image
-              src="/assets/icons/logo/aeroedit-icon.svg"
-              alt="AeroEdit"
-              width={60}
-              height={60}
-              className="mb-1"
-            />
+          <h1 className="text-bold text-2xl">⚡uperKit</h1>
             <h1 className="text-2xl font-semibold tracking-tight text-foreground">
               Welcome back
             </h1>

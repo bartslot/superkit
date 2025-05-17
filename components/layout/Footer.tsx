@@ -17,7 +17,7 @@ export default function Footer() {
       links: [
         { label: 'About', href: '/about' },
         { label: 'Contact', href: '/contact' },
-        { label: 'GitHub', href: 'https://github.com/zeeshana07x/superkit' },
+        { label: 'GitHub', href: 'https://github.com/zeeshana07x' },
       ],
     },
   ];

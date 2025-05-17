@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState, useEffect } from "react";
 import { signup } from "@/app/signup/actions";
 import { AuthenticationForm } from "@/components/authentication/AuthenticationForm";
@@ -40,15 +39,9 @@ export function SignupForm() {
           </svg>
         </div>
         <div className="flex flex-col items-center relative">
-          <Image
-            src="/assets/icons/logo/aeroedit-icon.svg"
-            alt="AeroEdit"
-            width={90}
-            height={90}
-            className="mb-2"
-          />
+        <h1 className="text-bold text-2xl">⚡uperKit</h1>
           <h1 className="text-3xl font-semibold tracking-tight text-foreground">
-            Join AeroEdit
+            Join SuperKit
           </h1>
           <p className="text-muted-foreground mt-2 text-center">
             Create an account to start your journey

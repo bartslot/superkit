@@ -13,7 +13,7 @@ const work_sans = Work_Sans({
 export const metadata: Metadata = {
   title: 'SuperKit - Next.js Starter Kit',
   description: 'A powerful starter kit for Next.js with TypeScript and Tailwind CSS',
-  keywords: ['next.js', 'react', 'typescript', 'tailwind css', 'starter kit'],
+  keywords: ['super kit','nextjs starterkit', 'react starterkit', 'typescript', 'tailwind css', 'starter kit'],
 };
 
 export default function RootLayout({
