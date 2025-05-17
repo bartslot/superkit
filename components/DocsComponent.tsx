@@ -5,7 +5,7 @@ import Link from "next/link";
 import CodeBlock from "@/components/CodeBlock";
 
 const DocsComponent = () => {
-    const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear();
 
   return (
     <div className="min-h-screen bg-background">
@@ -272,7 +272,7 @@ NEXT_PUBLIC_PADDLE_CLIENT_TOKEN=`}
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>
-                Three-tier pricing page that's fully localized for 200+ markets
+                Three-tier pricing page that&apos;s fully localized for 200+ markets
                 using Paddle.js
               </li>
               <li>Integrated checkout experience built with Paddle Checkout</li>
@@ -302,7 +302,7 @@ NEXT_PUBLIC_PADDLE_CLIENT_TOKEN=`}
               Contributing
             </h2>
             <p className="mb-4">
-              We ❤️ contributions! Whether it's reporting bugs, suggesting new
+              We ❤️ contributions! Whether it&apos;s reporting bugs, suggesting new
               features, improving documentation, or submitting code, your input
               is welcome.
             </p>
@@ -310,7 +310,7 @@ NEXT_PUBLIC_PADDLE_CLIENT_TOKEN=`}
             <h3 className="text-xl font-semibold mb-2">How to Contribute</h3>
             <ol className="list-decimal pl-6 space-y-2">
               <li>
-                <strong>Fork the repository</strong> - Click the "Fork" button
+                <strong>Fork the repository</strong> – Click the &quot;Fork&quot; button
                 at the top-right of the SuperKit repo page to create your own
                 copy.
               </li>
@@ -356,7 +356,9 @@ git commit -m "feat: describe your feature or fix"`}
                 <strong>Open a Pull Request</strong>
                 <ul className="list-disc pl-6 mt-1 space-y-1 text-sm">
                   <li>Navigate to your fork on GitHub</li>
-                  <li>Click "Compare & pull request"</li>
+                  <li>
+                    Click &quot;Compare &amp; pull request&quot;
+                  </li>
                   <li>
                     Fill out the PR template, explaining what you changed and
                     why
@@ -395,13 +397,13 @@ git commit -m "feat: describe your feature or fix"`}
 
         <footer className="mt-16 pt-8 border-t border-border text-center">
           <p>
-            Made with ❤️ & vibe by 
+            Made with ❤️ &amp; vibe by{" "}
             <span className="font-bold">
               <Link href="https://github.com/zeeshana07x/"> Zeeshan</Link>
             </span>
           </p>
           <p className="mt-2 text-sm text-secondary">
-          &copy; {currentYear} SuperKit. All rights reserved.
+            &copy; {currentYear} SuperKit. All rights reserved.
           </p>
         </footer>
       </div>
