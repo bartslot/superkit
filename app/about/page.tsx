@@ -1,9 +1,7 @@
 // app/about/page.tsx
 import React from "react";
 import { About } from "@/components/about/About";
-import Link from "next/link";
 import type { Metadata } from "next";
-import { ChevronLeft } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About - SuperKit",
