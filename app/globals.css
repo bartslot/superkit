@@ -5,7 +5,7 @@
   Dark-Mode-Only Color Variables
 ────────────────────────────────────────────────────────────────*/
 :root {
-  --background:           hsl(180,18%, 7%);
+  --background:           #0f1515;
   --foreground:           hsl(0,   0%,100%);
   --card:                 hsl(222,84%, 4.9%);
   --card-foreground:      hsl(0,   0%,100%);
