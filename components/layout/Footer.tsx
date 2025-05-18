@@ -2,22 +2,21 @@ import Link from 'next/link';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  
+
+  // Updated link groups: removed Product, removed Contact; added Legal
   const footerLinks = [
-    {
-      title: 'Product',
-      links: [
-        { label: 'Features', href: '/#features' },
-        { label: 'Roadmap', href: '/roadmap' },
-        { label: 'Changelog', href: '/changelog' },
-      ],
-    },
     {
       title: 'Company',
       links: [
         { label: 'About', href: '/about' },
-        { label: 'Contact', href: '/contact' },
         { label: 'GitHub', href: 'https://github.com/zeeshana07x' },
+      ],
+    },
+    {
+      title: 'Legal',
+      links: [
+        { label: 'License', href: '/license' },
+        { label: 'Privacy Policy', href: '/privacy-policy' },
       ],
     },
   ];
@@ -29,8 +28,8 @@ export default function Footer() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             {/* Brand & Description */}
             <div className="col-span-1 lg:col-span-2">
-              <Link 
-                href="/" 
+              <Link
+                href="/"
                 className="mb-6 inline-block relative transition-transform duration-300 hover:scale-105 after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-current hover:after:w-full after:transition-all after:duration-300"
               >
                 <span className="text-2xl font-bold text-primary-300">
@@ -46,7 +45,7 @@ export default function Footer() {
                 &copy; {currentYear} SuperKit. All rights reserved.
               </p>
             </div>
-            
+
             {/* Link Groups */}
             <div className="col-span-1 lg:col-span-2">
               <div className="grid grid-cols-2 gap-8">
