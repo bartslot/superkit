@@ -239,6 +239,15 @@ export default function PrivacyPolicyPage() {
                 <p className="mt-8 font-semibold text-foreground">
                   Regards, Zeeshan
                 </p>
+                <p className="text-secondary-300 flex flex-wrap gap-2 items-center">
+                  In a real project, you'd want a proper legal policy here! 
+                  <span className="inline-flex gap-1">
+                    <span>😉</span>
+                    <span>⚖️</span>
+                    <span>📝</span>
+                    <span>✨</span>
+                  </span>
+                </p>
               </section>
             </div>
           </div>
