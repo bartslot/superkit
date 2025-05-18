@@ -56,7 +56,7 @@ export default function PrivacyPolicyPage() {
                   Introduction
                 </h2>
                 <p className="text-secondary-300">
-                  Welcome to SuperKit (“we,” “our,” or “us”). We respect your
+                  Welcome to SuperKit (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;). We respect your
                   privacy and are committed to protecting your personal data.
                   This privacy policy will inform you about how we handle your
                   personal data when you visit our website and use our services,
@@ -218,7 +218,7 @@ export default function PrivacyPolicyPage() {
                 <p className="text-secondary-300">
                   We may update our Privacy Policy from time to time. We will notify
                   you of any changes by posting the new Privacy Policy on this page
-                  and updating the "Last updated" date. You are advised to review
+                  and updating the &ldquo;Last updated&rdquo; date. You are advised to review
                   this Privacy Policy periodically for any changes.
                 </p>
               </section>
@@ -227,20 +227,20 @@ export default function PrivacyPolicyPage() {
               <section>
                 <h2 className="text-2xl font-bold text-foreground mb-4">Final Words</h2>
                 <p className="text-secondary-300 text-lg">
-                  Okay, real talk 👀 — this privacy policy is just a placeholder. I'm
-                  not collecting your data (I wouldn’t even know how if I wanted to
-                  😅). But I didn’t wanna leave this section empty, so here we are!
-                  Please don’t take it too seriously 😂.
+                  Okay, real talk 👀 — this privacy policy is just a placeholder. I&apos;m
+                  not collecting your data (I wouldn&apos;t even know how if I wanted to
+                  😅). But I didn&apos;t wanna leave this section empty, so here we are!
+                  Please don&apos;t take it too seriously 😂.
                 </p>
                 <p className="text-secondary-300 text-lg mt-4">
-                  Stay cool, build awesome stuff, and don’t forget to commit early &
+                  Stay cool, build awesome stuff, and don&apos;t forget to commit early &
                   often! 🚀💻✨😎🎉
                 </p>
                 <p className="mt-8 font-semibold text-foreground">
                   Regards, Zeeshan
                 </p>
                 <p className="text-secondary-300 flex flex-wrap gap-2 items-center">
-                  In a real project, you'd want a proper legal policy here! 
+                  In a real project, you&apos;d want a proper legal policy here! 
                   <span className="inline-flex gap-1">
                     <span>😉</span>
                     <span>⚖️</span>
