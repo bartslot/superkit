@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import DocsComponent from "@/components/DocsComponent";
+import DocsComponent from "@/components/docs/DocsComponent";
 
 export const metadata: Metadata = {
   title: "Documentation - SuperKit",
