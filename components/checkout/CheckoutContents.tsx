@@ -1,5 +1,4 @@
 'use client';
-
 import { PriceSection } from '@/components/checkout/PriceSection';
 import { type Environments, initializePaddle, type Paddle } from '@paddle/paddle-js';
 import type { CheckoutEventsData } from '@paddle/paddle-js/types/checkout/events';
@@ -26,11 +25,14 @@ export function CheckoutContents({ userEmail }: Props) {
     setCheckoutData(event);
   };
 
+  // Fixed: Pass an inline function to useCallback with proper dependencies
   const updateItems = useCallback(
-    throttle((paddle: Paddle, priceId: string, quantity: number) => {
-      paddle.Checkout.updateItems([{ priceId, quantity }]);
-    }, 1000),
-    [],
+    (paddleInstance: Paddle, pId: string, qty: number) => {
+      throttle(() => {
+        paddleInstance.Checkout.updateItems([{ priceId: pId, quantity: qty }]);
+      }, 1000)();
+    },
+    []
   );
 
   useEffect(() => {
@@ -55,10 +57,10 @@ export function CheckoutContents({ userEmail }: Props) {
             successUrl: '/checkout/success',
           },
         },
-      }).then(async (paddle) => {
-        if (paddle && priceId) {
-          setPaddle(paddle);
-          paddle.Checkout.open({
+      }).then(async (paddleInstance) => {
+        if (paddleInstance && priceId) {
+          setPaddle(paddleInstance);
+          paddleInstance.Checkout.open({
             ...(userEmail && { customer: { email: userEmail } }),
             items: [{ priceId: priceId, quantity: 1 }],
           });
