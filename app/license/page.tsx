@@ -1,5 +1,10 @@
-import React from 'react';
+import type { Metadata } from "next";
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: "License - SuperKit",
+  description: "Privacy Policy for SuperKit - Next.js starter kit",
+};
 
 export default function LicensePage() {
   const currentYear = new Date().getFullYear();

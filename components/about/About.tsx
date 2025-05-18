@@ -47,15 +47,6 @@ export function About() {
         >
           Sponsor SuperKit
         </Link>
-
-        <Link
-          href="https://www.buymeacoffee.com/zeeshana07x"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block px-6 py-2 text-sm font-medium rounded-md bg-yellow-400 text-card-foreground hover:bg-yellow-500/90 transition"
-        >
-          Buy Me a Coffee ☕
-        </Link>
       </div>
     </div>
   );
