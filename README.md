@@ -205,7 +205,7 @@ This project follows the [Contributor Covenant Code of Conduct](https://www.cont
 
 ## License
 
-SuperKit is released under the MIT License. See the LICENSE file for details.
+SuperKit is released under the MIT License. See the [LICENSE.md](/LICENSE.md) file for details.
 
 ---
 
