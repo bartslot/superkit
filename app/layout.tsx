@@ -1,35 +1,53 @@
-import type { Metadata } from 'next';
-import { Work_Sans } from 'next/font/google';
-import './globals.css';
-import HeaderFooterWrapper from '@/components/HeaderFooterWrapper';
-import SupabaseProvider from '@/components/SupabaseProvider';
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+import { Header } from "@/components/layout/Header";
+import { Toaster } from "@/components/ui/toaster";
+import { cn } from "@/lib/utils";
+import { ThemeProvider } from "@/components/layout/ThemeProvider";
 
-const work_sans = Work_Sans({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-work-sans',
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: 'SuperKit - Next.js Starter Kit',
-  description: 'A powerful starter kit for Next.js with TypeScript and Tailwind CSS',
-  keywords: ['super kit','nextjs starterkit', 'react starterkit', 'typescript', 'tailwind css', 'starter kit'],
+  title: "Toolbox",
+  description: "A collection of useful utilities including a URL shortener.",
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html lang="en" className={work_sans.variable}>
-      <body className="flex min-h-screen flex-col">
-        {/* SupabaseProvider is client-only, so layout stays a server component */}
-        <SupabaseProvider>
-        <HeaderFooterWrapper>
-          {children}
-        </HeaderFooterWrapper>
-        </SupabaseProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={cn(
+          geistSans.variable,
+          geistMono.variable,
+          "antialiased font-sans bg-background text-foreground"
+        )}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="flex flex-col min-h-screen">
+            <Header />
+
+            <main className="flex-1">{children}</main>
+          </div>
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );

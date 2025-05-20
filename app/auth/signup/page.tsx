@@ -1,22 +1,17 @@
 // app/signup/page.tsx
 import { redirect } from 'next/navigation';
 import { getSession } from '@/utils/supabase/server';
-import { SignupForm } from '@/components/authentication/SignupForm';
+import { SignUpForm } from '@/components/authentication/SignupForm';
 import { GgLoginButton } from '@/components/authentication/GgLoginButton';
 
 export default async function SignupPage() {
-  // Server‑side redirect if already signed in
-  const session = await getSession();
-  if (session) {
-    redirect('/');
-  }
 
   // No session? Show signup UI
   return (
     <div className="flex flex-col h-screen items-center justify-start py-8 px-4">
       {/* Top card: email/password */}
       <div className="bg-background/80 w-full max-w-md rounded-t-lg login-card-border backdrop-blur-[6px] overflow-hidden">
-        <SignupForm />
+        <SignUpForm />
       </div>
 
       {/* Google OAuth */}

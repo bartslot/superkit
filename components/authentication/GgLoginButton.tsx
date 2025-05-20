@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { signInWithGoogle } from '@/app/login/actions';
+import { signInWithGoogle } from '@/app/auth/login/actions';
 
 interface Props {
   label: string;
