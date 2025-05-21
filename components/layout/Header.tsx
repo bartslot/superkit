@@ -1,55 +1,38 @@
+'use client';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Wrench } from 'lucide-react'; 
-import { ThemeToggle } from '@/components/layout/ThemeToggle';
-import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import Navbar from './Navbar';
 
-export function Header() {
+export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="bg-card border-b border-border sticky top-0 z-50 shadow-sm">
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 text-xl font-bold text-primary hover:opacity-80 transition-opacity">
-          <Wrench className="h-6 w-6" />
-          <span>Toolbox</span>
-        </Link>
-        
-        <div className="flex items-center gap-2 sm:gap-3">
-          <nav className="hidden sm:flex items-center gap-1">
-            <Button variant="ghost" asChild>
-              <Link href="/pricing">Pricing</Link>
-            </Button>
-            {/* Add more navigation links here if needed */}
-          </nav>
-          
-          <div className="flex items-center gap-2">
-             <Button variant="outline" size="sm" asChild className="hidden xs:inline-flex">
-              <Link href="/auth/signin">Sign In</Link>
-            </Button>
-            <Button size="sm" asChild>
-              <Link href="/auth/signup">Sign Up</Link>
-            </Button>
+    <header
+      className={cn(
+        'sticky top-0 z-40 w-full transition-all duration-200',
+        isScrolled ? 'bg-background shadow-md' : 'bg-transparent',
+      )}
+    >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
+          <div className="flex items-center">
+            <Link href="/" className="flex items-center space-x-2">
+              <span className="text-2xl font-bold text-primary-300">⚡uperKit</span>
+            </Link>
           </div>
-
-          <ThemeToggle />
-          
-          {/* For smaller screens, consider a mobile menu (e.g., using Sheet component) later */}
-          {/* <div className="sm:hidden">
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon"><Menu className="h-5 w-5" /></Button>
-              </SheetTrigger>
-              <SheetContent>
-                <nav className="flex flex-col gap-4 mt-8">
-                  <Link href="/pricing" className="text-lg">Pricing</Link>
-                  <Link href="/auth/signin" className="text-lg">Sign In</Link>
-                  <Link href="/auth/signup" className="text-lg">Sign Up</Link>
-                </nav>
-              </SheetContent>
-            </Sheet>
-          </div> */}
+          <Navbar />
         </div>
       </div>
     </header>
   );
 }
-

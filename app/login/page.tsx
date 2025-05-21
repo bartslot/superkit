@@ -5,6 +5,11 @@ import { LoginForm } from '@/components/authentication/LoginForm';
 import { GgLoginButton } from '@/components/authentication/GgLoginButton';
 
 export default async function LoginPage() {
+  // Server‑side: if there's already a session, send them home immediately
+  const session = await getSession();
+  if (session) {
+    redirect('/');
+  }
 
   // No session? Render the login UI
   return (
