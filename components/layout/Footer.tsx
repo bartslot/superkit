@@ -8,7 +8,6 @@ export default function Footer() {
     {
       title: 'Company',
       links: [
-        { label: 'About', href: '/about' },
         { label: 'GitHub', href: 'https://github.com/zeeshana07x' },
       ],
     },
