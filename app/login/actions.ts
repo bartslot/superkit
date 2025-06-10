@@ -68,7 +68,7 @@ export async function loginAnonymously() {
     return { error: true };
   }
 
-  const randomEmail = `superkit+${Date.now().toString(36)}@paddle.com`;
+  const randomEmail = `Drift+${Date.now().toString(36)}@paddle.com`;
   const { error: updateUserError } = await supabase.auth.updateUser({
     email: randomEmail,
   });

@@ -21,8 +21,8 @@ export default function ComingSoon({ title = 'This page', children }: ComingSoon
       {children && <div className="mb-8">{children}</div>}
 
       <p className="text-sm text-gray-500 mb-1">
-        SuperKit is <span className="font-semibold">open source</span> on{' '}
-        <Link href="https://github.com/zeeshana07x/SuperKit" className="underline text-primary-500 hover:text-primary-600">
+        Drift is <span className="font-semibold">open source</span> on{' '}
+        <Link href="https://github.com/zeeshana07x/Drift" className="underline text-primary-500 hover:text-primary-600">
           GitHub
         </Link>
         — feel free to 💖 contribute!

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: "License - SuperKit",
-  description: "Privacy Policy for SuperKit - Next.js starter kit",
+  title: "License - Drift",
+  description: "Privacy Policy for Drift - Next.js starter kit",
 };
 
 export default function LicensePage() {
@@ -17,7 +17,7 @@ export default function LicensePage() {
           MIT License
         </p>
         <p className="mb-4">
-          Copyright (c) {currentYear} SuperKit
+          Copyright (c) {currentYear} Drift
         </p>
         <p className="mb-4">
           Permission is hereby granted, free of charge, to any person obtaining a copy

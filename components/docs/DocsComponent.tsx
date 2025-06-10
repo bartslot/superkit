@@ -12,7 +12,7 @@ const DocsComponent = () => {
       <div className="container mx-auto px-4 py-8 md:py-16 max-w-4xl">
         <header className="mb-8 md:mb-12 text-center">
           <h1 className="text-3xl md:text-4xl font-bold mb-2">
-            SuperKit Documentation
+            Drift Documentation
           </h1>
           <p className="text-lg md:text-xl text-secondary">
             A fully configured Next.js starter kit with Supabase and Paddle
@@ -141,8 +141,8 @@ const DocsComponent = () => {
                   1. Clone the repo
                 </h3>
                 <CodeBlock>
-                  {`git clone https://github.com/zeeshana07x/superkit.git
-cd superkit`}
+                  {`git clone https://github.com/zeeshana07x/Drift.git
+cd Drift`}
                 </CodeBlock>
               </div>
 
@@ -215,7 +215,7 @@ NEXT_PUBLIC_PADDLE_CLIENT_TOKEN=`}
                   Email/Password Authentication
                 </h3>
                 <p>
-                  SuperKit comes with email/password authentication
+                  Drift comes with email/password authentication
                   pre-configured through Supabase.
                 </p>
               </div>
@@ -267,7 +267,7 @@ NEXT_PUBLIC_PADDLE_CLIENT_TOKEN=`}
               Paddle Integration
             </h2>
             <p className="mb-4">
-              SuperKit integrates Paddle for payment processing and subscription
+              Drift integrates Paddle for payment processing and subscription
               management. Key features include:
             </p>
             <ul className="list-disc pl-6 space-y-2">
@@ -311,14 +311,14 @@ NEXT_PUBLIC_PADDLE_CLIENT_TOKEN=`}
             <ol className="list-decimal pl-6 space-y-2">
               <li>
                 <strong>Fork the repository</strong> – Click the &quot;Fork&quot; button
-                at the top-right of the SuperKit repo page to create your own
+                at the top-right of the Drift repo page to create your own
                 copy.
               </li>
               <li>
                 <strong>Clone your fork locally</strong>
                 <CodeBlock>
-                  {`git clone https://github.com/zeeshana07x/superkit.git
-cd superkit`}
+                  {`git clone https://github.com/zeeshana07x/Drift.git
+cd Drift`}
                 </CodeBlock>
               </li>
               <li>
@@ -403,7 +403,7 @@ git commit -m "feat: describe your feature or fix"`}
             </span>
           </p>
           <p className="mt-2 text-sm text-secondary">
-            &copy; {currentYear} SuperKit. All rights reserved.
+            &copy; {currentYear} Drift. All rights reserved.
           </p>
         </footer>
       </div>

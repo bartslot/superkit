@@ -32,7 +32,7 @@ export default function Footer() {
                 className="mb-6 inline-block relative transition-transform duration-300 hover:scale-105 after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-current hover:after:w-full after:transition-all after:duration-300"
               >
                 <span className="text-2xl font-bold text-primary-300">
-                  SuperKit
+                  Drift
                 </span>
               </Link>
               <p className="mb-4 max-w-md text-sm text-secondary-400">
@@ -41,7 +41,7 @@ export default function Footer() {
                 technologies.
               </p>
               <p className="text-sm text-secondary-500">
-                &copy; {currentYear} SuperKit. All rights reserved.
+                &copy; {currentYear} Drift. All rights reserved.
               </p>
             </div>
 

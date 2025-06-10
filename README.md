@@ -57,12 +57,14 @@ Get up and running in minutes—no boilerplate headaches.
 ## Getting Started
 
 1. **Clone the repository**
+
    ```bash
-   git clone https://github.com/yourusername/superkit.git
-   cd superkit
+   git clone https://github.com/yourusername/Drift.git
+   cd Drift
    ```
 
 2. **Install dependencies**
+
    ```bash
    pnpm install
    # or
@@ -70,6 +72,7 @@ Get up and running in minutes—no boilerplate headaches.
    ```
 
 3. **Set up environment variables**
+
    - Copy `.env.example` to `.env.local` and fill in your keys (see [Environment Variables](#environment-variables))
 
 4. **Run the development server**
@@ -103,10 +106,9 @@ PADDLE_NOTIFICATION_WEBHOOK_SECRET=your-webhook-secret
 NEXT_PUBLIC_PADDLE_CLIENT_TOKEN=your-client-token
 ```
 
-
 ## Authentication Flow
 
-SuperKit implements a secure authentication flow using Supabase Auth:
+Drift implements a secure authentication flow using Supabase Auth:
 
 1. **Sign Up**: Users create an account with email/password
 2. **Email Verification**: Optional verification via Supabase
@@ -116,7 +118,7 @@ SuperKit implements a secure authentication flow using Supabase Auth:
 
 ## Paddle Integration
 
-SuperKit includes a complete Paddle checkout integration:
+Drift includes a complete Paddle checkout integration:
 
 1. **Checkout Flow**: Initiate purchases with the Paddle overlay
 2. **Webhook Handling**: Process subscription events
@@ -140,7 +142,7 @@ pnpm db:generate  # Generate Supabase types
 
 ## Deployment
 
-SuperKit works seamlessly with Vercel:
+Drift works seamlessly with Vercel:
 
 1. **Connect your repository** to Vercel
 2. **Set environment variables** in the Vercel dashboard
@@ -155,33 +157,39 @@ We ❤️ contributions! Whether it's reporting bugs, suggesting features, impro
 ### How to Contribute
 
 1. **Fork the repository**
-   
-   Click the "Fork" button at the top-right of the SuperKit repo page.
+
+   Click the "Fork" button at the top-right of the Drift repo page.
 
 2. **Clone your fork locally**
+
    ```bash
-   git clone https://github.com/yourusername/superkit.git
-   cd superkit
+   git clone https://github.com/yourusername/Drift.git
+   cd Drift
    ```
 
 3. **Create a new branch**
+
    ```bash
    git checkout -b feat/your-feature-name
    ```
+
    Use descriptive branch names like `fix/navbar-scroll` or `feat/paddle-webhook`.
 
 4. **Make your changes**
+
    - Follow the existing code style
    - Add or update code as needed
    - Update documentation when applicable
 
 5. **Commit your work**
+
    ```bash
    git add .
    git commit -m "feat: describe your feature or fix"
    ```
 
 6. **Push your branch to GitHub**
+
    ```bash
    git push origin feat/your-feature-name
    ```
@@ -205,7 +213,7 @@ This project follows the [Contributor Covenant Code of Conduct](https://www.cont
 
 ## License
 
-SuperKit is released under the MIT License. See the [LICENSE.md](/LICENSE.md) file for details.
+Drift is released under the MIT License. See the [LICENSE.md](/LICENSE.md) file for details.
 
 ---
 

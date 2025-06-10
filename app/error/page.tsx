@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'SuperKit - Error',
+  title: 'Drift - Error',
 };
 
 export default function ErrorPage() {

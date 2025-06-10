@@ -64,8 +64,8 @@ export default function HomePage() {
     },
   ];
 
-  const gitSnippet = `  # 1. Clone the SuperKit repo
-  git clone https://github.com/zeeshana07x/superkit.git my-app
+  const gitSnippet = `  # 1. Clone the Drift repo
+  git clone https://github.com/zeeshana07x/Drift.git my-app
   cd my-app
   
   # 2. Install dependencies
@@ -84,7 +84,7 @@ export default function HomePage() {
           <div className="grid gap-12 md:grid-cols-2 md:items-center">
             <div className="space-y-6">
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-                SuperKit
+                Drift
                 <span className="block text-primary-300">
                   Next.js Starter Kit
                 </span>
@@ -102,7 +102,7 @@ export default function HomePage() {
                   Explore Features
                 </Link>
                 <Link
-                  href="https://github.com/zeeshana07x/superkit"
+                  href="https://github.com/zeeshana07x/Drift"
                   className="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background border border-input hover:bg-accent hover:text-accent-foreground bg-transparent text-white h-11 px-8 text-base"
                 >
                   GitHub
@@ -167,10 +167,10 @@ export default function HomePage() {
               Ready to start building?
             </h2>
             <p className="mb-8 text-lg text-secondary-300">
-              Get started with SuperKit today and build your next great project.
+              Get started with Drift today and build your next great project.
             </p>
             <Link
-              href="https://github.com/zeeshana07x/superkit"
+              href="https://github.com/zeeshana07x/Drift"
               className="inline-flex items-center justify-center font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background px-8 bg-primary-300 text-background hover:bg-primary-400 h-11 rounded-md text-base transform transition-transform duration-300 hover:scale-105"
             >
               Get Started

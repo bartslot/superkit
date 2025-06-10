@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - SuperKit",
-  description: "Privacy Policy for SuperKit - Next.js starter kit",
+  title: "Privacy Policy - Drift",
+  description: "Privacy Policy for Drift - Next.js starter kit",
 };
 
 export default function PrivacyPolicyPage() {
@@ -56,7 +56,7 @@ export default function PrivacyPolicyPage() {
                   Introduction
                 </h2>
                 <p className="text-secondary-300">
-                  Welcome to SuperKit (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;). We respect your
+                  Welcome to Drift (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;). We respect your
                   privacy and are committed to protecting your personal data.
                   This privacy policy will inform you about how we handle your
                   personal data when you visit our website and use our services,
@@ -76,7 +76,7 @@ export default function PrivacyPolicyPage() {
                       Personal Information
                     </h3>
                     <p className="text-secondary-300">
-                      When you use SuperKit, we may collect the following types
+                      When you use Drift, we may collect the following types
                       of personal information:
                     </p>
                     <ul className="list-disc pl-5 text-secondary-300 mt-2 space-y-1">

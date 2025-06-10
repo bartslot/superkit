@@ -150,7 +150,7 @@ export default function Navbar() {
             ))}
             <li>
               <Link
-                href="https://github.com/zeeshana07x/superkit"
+                href="https://github.com/zeeshana07x/Drift"
                 className="inline-flex w-full items-center justify-center rounded-md text-sm font-medium transition-all duration-200 hover:translate-y-[-2px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none bg-background text-foreground hover:bg-secondary-800 h-10 py-2 px-4"
               >
                 GitHub

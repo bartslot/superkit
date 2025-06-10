@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80">
   <!-- Background rectangle with rounded corners (optional) -->
   <rect x="10" y="10" width="220" height="60" rx="10" ry="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />
-  
+
   <!-- Lightning Bolt instead of S -->
   <path d="M42 20 L28 44 L44 44 L38 60 L52 36 L36 36 L42 20 Z" fill="#fbbf24" stroke="#f59e0b" stroke-width="1" />
-  
+
   <!-- "uperKit" Text -->
-  <text x="54" y="47" font-family="Arial, sans-serif" font-weight="bold" font-size="24" fill="#1e293b">
-    uperKit
+  <text x="54" y="47" font-family="Arial, sans-serif" font-weight="bold" font-size="26" fill="#1e293b">
+    Drift
   </text>
 </svg>
