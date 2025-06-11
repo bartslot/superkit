@@ -54,7 +54,7 @@ export function LoginForm({ hideSignUpLink = false }: LoginFormProps) {
             </svg>
           </div>
           <div className="flex flex-col items-center relative z-10">
-          <h1 className="text-bold text-2xl">⚡uperKit</h1>
+          <h1 className="text-bold text-2xl">Drift</h1>
             <h1 className="text-2xl font-semibold tracking-tight text-foreground">
               Welcome back
             </h1>

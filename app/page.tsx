@@ -86,26 +86,17 @@ export default function HomePage() {
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
                 Drift
                 <span className="block text-primary-300">
-                  Next.js Starter Kit
+                  Stoploss Tracker
                 </span>
               </h1>
               <p className="text-lg text-primary-100">
-                A modern, lightweight starter kit for Next.js with TypeScript
-                and Tailwind CSS. Start building your next project with
-                confidence.
-              </p>
+                Drift connects your Broker account and protects your positions. It changes your stoploss so it maximizes your profits.             </p>
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="#features"
                   className="inline-flex items-center text-black justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-primary hover:bg-primary/90 h-11 px-8 text-base"
                 >
                   Explore Features
-                </Link>
-                <Link
-                  href="https://github.com/zeeshana07x/Drift"
-                  className="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background border border-input hover:bg-accent hover:text-accent-foreground bg-transparent text-white h-11 px-8 text-base"
-                >
-                  GitHub
                 </Link>
               </div>
             </div>

@@ -39,12 +39,12 @@ export function SignupForm() {
           </svg>
         </div>
         <div className="flex flex-col items-center relative">
-        <h1 className="text-bold text-2xl">⚡uperKit</h1>
           <h1 className="text-3xl font-semibold tracking-tight text-foreground">
             Join Drift
           </h1>
           <p className="text-muted-foreground mt-2 text-center">
-            Create an account to start your journey
+            Create an account to maximize profits
+            
           </p>
         </div>
       </div>
